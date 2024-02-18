@@ -37,6 +37,14 @@ std::ostream& operator<<(std::ostream& os, const TestObj obj)
     return obj.print(os);
 }
 
+void func(int* const a)
+{
+
+    *a += 1; // cannot happen
+    int *b = new int[2];
+    //a = b; // can happen
+}
+
 int main(int argc, char** argv)
 {
     TestObj obj;
